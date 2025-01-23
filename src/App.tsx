@@ -1,17 +1,16 @@
 import './App.css'
 
 // lessons
-
+import Lesson06 from './lessons/Lesson06/Lesson06'
 // homeworks
 
 // consultations
 
 function App() {
- 
-
   return (
     <div className='app'>
-      Hello TS
+   {/* Topic: TypeScript-Introduction */}
+      <Lesson06/>
     </div>
   )
 }
