@@ -1,18 +1,19 @@
-import "./styles.css";
-import { ButtonProps } from "./types";
 
-//interface ButtonProps {
-//   name: string,
-//    type: 'submit' | 'button' | 'reset',
-//    onClick: () => void 
-//}
+import { MainButton } from "./styles";
 
-function Button({ name = "SEND", type, onClick }: ButtonProps) {
-   
-    return (
-      <button className="main-button" type={type} onClick={onClick}>
-        {name}
-      </button>
-    );
-  }
-  export default Button;
+interface MainButtonProps {
+  name?: string; 
+  type?: "submit" | "button" | "reset"; 
+  onClick?: () => void; 
+  disabled?: boolean; 
+}
+
+const Button = ({ name = "SEND", type = "button", onClick, disabled = false }: MainButtonProps) => {
+  return (
+    <MainButton type={type} onClick={!disabled ? onClick : undefined} disabled={disabled}>
+      {name}
+    </MainButton>
+  );
+};
+
+export default Button;
