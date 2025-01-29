@@ -24,6 +24,7 @@ function Homework09 ()  {
         id="input1"
         type="text"
         placeholder="Введите значение 1"
+        label="Значение 1"
         value={input1} 
         onChange={(e) => setInput1(e.target.value)}
       />
