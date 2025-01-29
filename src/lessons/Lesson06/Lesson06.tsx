@@ -1,4 +1,4 @@
-import "./styles.css"
+import { Lesson06Wrapper } from './styles';
 
 function Lesson06() { 
     // Типы перемещенных указываются аосле названия через двоеточие
@@ -108,10 +108,10 @@ function Lesson06() {
 
 
     return (
-        <div className="lesson06-wrapper">
+        <Lesson06Wrapper>
         Lesson06-TypeScript Introduction
         {fullName}
-      </div>
+        </Lesson06Wrapper>
     )
   }
   export default Lesson06
