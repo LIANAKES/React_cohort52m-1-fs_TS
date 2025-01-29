@@ -1,16 +1,10 @@
 
 import { MainButton } from "./styles";
+import { MainButtonProps } from "./types";
 
-interface MainButtonProps {
-  name?: string; 
-  type?: "submit" | "button" | "reset"; 
-  onClick?: () => void; 
-  disabled?: boolean; 
-}
-
-const Button = ({ name = "SEND", type = "button", onClick, disabled = false }: MainButtonProps) => {
+const Button = ({ name = "SEND", type = "button", onClick, disabled = false, }: MainButtonProps) => {
   return (
-    <MainButton type={type} onClick={!disabled ? onClick : undefined} disabled={disabled}>
+    <MainButton type={type} onClick= {onClick} disabled={disabled} >
       {name}
     </MainButton>
   );
