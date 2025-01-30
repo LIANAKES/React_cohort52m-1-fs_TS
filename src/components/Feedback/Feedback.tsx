@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../Button/Button";
-import "./styles.css";
+import {FeedbackWrapper, ButtonWrapper, Counter, ResetWrapper, ButtonStyled} from "./styles";
 
 // Типы для состояний
-const Feedback: React.FC = () => {
+function Feedback() {
   // Инициализация состояния для лайков и дизлайков
   const [likes, setLikes] = useState<number>(0);
   const [dislikes, setDislikes] = useState<number>(0);
@@ -23,20 +23,26 @@ const Feedback: React.FC = () => {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="button-wrapper">
+    <FeedbackWrapper>
+    <ButtonWrapper>
+      <ButtonStyled>
         <Button name="Like" type="button" onClick={onLikeClick} />
-        <span className="counter">{likes}</span>
-      </div>
-      <div className="button-wrapper">
+      </ButtonStyled>
+      <Counter>{likes}</Counter>
+    </ButtonWrapper>
+    <ButtonWrapper>
+      <ButtonStyled>
         <Button name="Dislike" type="button" onClick={onDislikeClick} />
-        <span className="counter">{dislikes}</span>
-      </div>
-      <div className="reset-wrapper">
+      </ButtonStyled>
+      <Counter>{dislikes}</Counter>
+    </ButtonWrapper>
+    <ResetWrapper>
+      <ButtonStyled>
         <Button name="Reset Results" type="button" onClick={onResetClick} />
-      </div>
-    </div>
-  );
-};
+      </ButtonStyled>
+    </ResetWrapper>
+  </FeedbackWrapper>
+);
+}
 
 export default Feedback;
