@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 
-export interface ButtonProps {
+export interface MainButtonProps  {
     name?: string,
     type?: 'submit' | 'button' | 'reset',
-    onClick: () => void 
+    onClick: () => void;
+    disabled?: boolean;
     children?: ReactNode;
 }

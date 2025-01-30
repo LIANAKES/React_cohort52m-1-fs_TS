@@ -1,4 +1,6 @@
-.feedback-wrapper {
+import styled from "@emotion/styled";
+
+export const FeedbackWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,26 +11,27 @@
     background-color: #f19be5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 280px;
-  }
+  `;
   
-  .button-wrapper {
+export const ButtonWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 15px;
-  }
+ `;
+
   
-  .counter {
+ export const Counter = styled.span`
     font-size: 18px;
     font-weight: bold;
     color: #555;
-  }
+ `;
   
-  .reset-wrapper {
+  export const ResetWrapper = styled.div`
     margin-top: 20px;
-  }
+  `;
   
-  button {
+ export const ButtonStyled = styled.div`
     padding: 10px 16px;
     font-size: 16px;
     font-weight: bold;
@@ -36,35 +39,10 @@
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.3s;
-  }
   
-  button:hover {
-    transform: scale(1.05);
-  }
+`;
   
-  button[name="Like"] {
-    background-color: #4caf50;
-    color: #fff;
-  }
+
   
-  button[name="Like"]:hover {
-    background-color: #45a049;
-  }
+ 
   
-  button[name="Dislike"] {
-    background-color: #f44336;
-    color: #fff;
-  }
-  
-  button[name="Dislike"]:hover {
-    background-color: #e53935;
-  }
-  
-  button[name="Reset Results"] {
-    background-color: #2196f3;
-    color: #fff;
-  }
-  
-  button[name="Reset Results"]:hover {
-    background-color: #1e88e5;
-  }
