@@ -15,6 +15,14 @@ function Homework09 ()  {
     setOutput2(input2);
   };
 
+  const [showOutput, setShowOutput] = useState(false);
+
+const handleButtonClick = () => {
+  setOutput1(input1);
+  setOutput2(input2);
+  setShowOutput(true);  // Отобразить блок после клика
+};
+
   return (
     <Container>
       <Title>Homework09</Title>
@@ -40,10 +48,13 @@ function Homework09 ()  {
 
       <Button onClick={handleButtonClick}>Отобразить значения</Button>
 
+      {showOutput && (
       <OutputWrapper>
-        <OutputItem>Значение 1: {output1}</OutputItem>
-        <OutputItem>Значение 2: {output2}</OutputItem>
+      <OutputItem>Значение 1: {output1}</OutputItem>
+      <OutputItem>Значение 2: {output2}</OutputItem>
       </OutputWrapper>
+)}
+      
     </Container>
   );
 };
