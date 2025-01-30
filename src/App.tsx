@@ -6,7 +6,8 @@ import GlobalStyles from './styles/GlobalStyles';
 // import Lesson07 from './lessons/Lesson07/Lesson07';
 // import Lesson08 from './lessons/Lesson08/Lesson08';
 // homeworks
-   import { Homework08 } from './homeworks/Homework08/Homework08';
+ //  import { Homework08 } from './homeworks/Homework08/Homework08';
+import Homework09 from './homeworks/Homework09/Homework09';
 
 // consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'
@@ -23,7 +24,8 @@ function App() {
     {/*<Lesson07/>*/}
     {/* Topic: Styling components */}
     {/*<Lesson08/>*/}
-    <Homework08/>
+    {/*<Homework08/>*/}
+    <Homework09/>
     </>
   )
 }

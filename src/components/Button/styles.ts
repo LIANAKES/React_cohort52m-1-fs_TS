@@ -7,12 +7,12 @@ export const MainButton = styled.button`
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  background-color: ${(props) => (props.disabled ? "#d6d6d6" : "#007bff")};
+  background-color: ${(props) => (props.disabled ? "#dccb86" : "#007bff")};
   color: ${(props) => (props.disabled ? "#999" : "#fff")};
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: ${(props) => (props.disabled ? "#d6d6d6" : "#0056b3")};
+    background-color: ${(props) => (props.disabled ? "#20e15a" : "#0056b3")};
   }
 
   &:disabled {
