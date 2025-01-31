@@ -1,20 +1,29 @@
-import {InputWrapper, StyledInput,StyledLabel } from "./styles";
-import { InputProps } from "./types";
+import { ErrorMessage, InputContainer, InputElement, Label } from "./styles";
+import { InputProps } from './types'
 
-
-    function Input({ name, type, placeholder, label, id, value, onChange}: InputProps)  {
+function Input({
+  name,
+  type = 'text',
+  placeholder,
+  label,
+  id,
+  value,
+  onChange,
+  error
+}: InputProps) {
   return (
-    <InputWrapper>
-      <StyledLabel htmlFor={name}>{label}</StyledLabel>
-      <StyledInput 
-        id={id} 
-        name={name} 
-        type={type} 
+    <InputContainer>
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <InputElement
+        name={name}
+        id={id}
+        type={type}
         placeholder={placeholder}
-        value={value} // управляемое значение
-        onChange={onChange} // обработчик изменения
+        value={value}
+        onChange={onChange}
       />
-    </InputWrapper>
+      <ErrorMessage>{error}</ErrorMessage>
+    </InputContainer>
   );
 }
 

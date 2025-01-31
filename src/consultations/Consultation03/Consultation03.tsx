@@ -40,4 +40,3 @@ function Consultation03() {
   }
   
   export default Consultation03;
-  

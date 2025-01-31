@@ -1,31 +1,33 @@
 import styled from "@emotion/styled";
 
-export const InputWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-  `;
-    
-export const StyledInput = styled.input`
-      width: 470px;
-      height: 78px;
-      gap: 4px;
-      padding: 8px;
-      border: 1px solid #83d47c;
-      border-radius: 4px;
-      text-align: center; 
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+`
 
-      &:focus {
-    border-color: #25ca08;
-    box-shadow: 0 0 5px rgba(47, 214, 225, 0.5);
-    outline: none;
-  }
-`;
-  export const StyledLabel = styled.label`
-      margin-bottom: 5px;
-      font-weight: bold;
-      text-align: center;
-   `;
-  
-  
+export const Label = styled.label`
+  font-size: 16px;
+  color: #6f6f6f;
+`
+
+export const InputElement = styled.input`
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 16px;
+
+  &::placeholder {
+  color: #a19f9f;
+}
+`
+
+export const ErrorMessage = styled.div`
+  height: 18px;
+  color: red;
+  font-size: 18px;
+`
