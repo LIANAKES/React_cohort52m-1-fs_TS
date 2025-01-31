@@ -13,30 +13,6 @@ export const Lesson11Wrapper = styled.div`
   text-align: center; 
 `;
 
-export const InputsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-bottom: 20px;
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  max-width: 300px;
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  text-align: center;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-
-  &:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
-  }
-`;
-
 export const FactContainer = styled.div`
   width: 100%;
   max-width: 400px;
@@ -51,8 +27,11 @@ export const FactContainer = styled.div`
   max-height: 700px; /* Ограничение по высоте */
   overflow-y: auto; /* Добавляем скролл */
 `;
+interface ButtonProps {
+  variant?: "primary" | "danger";
+}
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
    width: 100%;
   max-width: 320px;
   background-color: #007bff;
@@ -67,15 +46,7 @@ export const Button = styled.button`
   font-weight: bold;
 
   &:hover {
-    background-color: #0056b3;
-  }
-
-  &:nth-of-type(2) {
-    background-color: #dc3545;
-  }
-
-  &:nth-of-type(2):hover {
-    background-color: #b52b3a;
+    background-color: ${(props) => (props.variant === "danger" ? "#b52b3a" : "#0056b3")};
   }
 `;
 
