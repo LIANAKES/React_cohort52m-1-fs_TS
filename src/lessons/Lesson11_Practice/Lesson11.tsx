@@ -1,11 +1,11 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import axios from "axios";
-import { Lesson11Wrapper, InputsWrapper, Input, FactContainer, Button, ErrorMessage, Spinner } from "./styles";
+import { v4 as uuidv4 } from "uuid"; 
+import { Lesson11Wrapper,FactContainer, Button, ErrorMessage, Spinner } from "./styles";
 
 
 function Lesson11() {
-    const [search, setSearch] = useState<string>("");
-    const [facts, setFacts] = useState<string[]>([]);
+    const [facts, setFacts] = useState<{ id: string, text: string }[]>([]);
     const [error, setError] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
   
@@ -37,23 +37,19 @@ function Lesson11() {
     const handleDeleteAll = () => {
       setFacts([]);
     };
+
+    const factList = facts.map((fact) => (
+      <p key={fact.id}>{fact.text}</p>
+    ));
   
     return (
       <Lesson11Wrapper>
-        <InputsWrapper>
-          <Input name="search" placeholder="Enter value" value={search} onChange={onSearchChange} />
-        </InputsWrapper>
         <Button onClick={getCatFact}>GET MORE INFO</Button>
         {facts.length > 0 && <Button onClick={handleDeleteAll}>DELETE ALL DATA</Button>}
         {isLoading && <Spinner />}
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        {facts.length > 0 && (
-          <FactContainer>
-            {facts.map((fact, index) => (
-              <p key={index}>{fact}</p>
-            ))}
-          </FactContainer>
-        )}
+        {facts.length > 0 && 
+           <FactContainer>{factList}</FactContainer>}
       </Lesson11Wrapper>
     );
   }
