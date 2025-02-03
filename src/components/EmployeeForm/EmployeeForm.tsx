@@ -71,7 +71,7 @@ const EmployeeForm = () => {
           onChange={formik.handleChange}
         />
         <label htmlFor="terms">Accept Terms*</label>
-        {formik.errors.terms && <div>{formik.errors.terms}</div>}
+        {formik.errors.terms && <ErrorText>{formik.errors.terms}</ErrorText>}
       </CheckboxContainer>
       <Button type="submit" name="Create" />
     </FormContainer>
