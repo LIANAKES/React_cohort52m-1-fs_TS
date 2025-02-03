@@ -2,7 +2,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import { FormContainer, Title, InputsContainer, CheckboxContainer } from "./styles";
+import { FormContainer, Title, InputsContainer, CheckboxContainer, ErrorText}
+ from "./styles";
 
 const EmployeeForm = () => {
   const validationSchema = Yup.object().shape({

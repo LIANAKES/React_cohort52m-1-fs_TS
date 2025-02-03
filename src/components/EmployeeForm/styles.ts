@@ -31,3 +31,11 @@ export const CheckboxContainer = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
+export const ErrorText = styled.span`
+color: red;
+color: red;
+  font-size: 12px;
+  margin-top: 4px;
+`;
+
